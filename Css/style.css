@@ -1,0 +1,11 @@
+.table-custom {
+    background-color: #f8f9fa; 
+}
+
+.table-custom tbody tr {
+    color: #000; 
+}
+
+.table-custom tbody tr td {
+    color: #000; 
+}

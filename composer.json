@@ -1,0 +1,17 @@
+{
+    "name": "vendor/creacion_barcode",
+    "description": "ninguna",
+    "autoload": {
+        "psr-4": {
+            "Vendor\\CreacionBarcode\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "ohany garcia"
+        }
+    ],
+    "require": {
+        "picqer/php-barcode-generator": "^2.4"
+    }
+}
