@@ -2,9 +2,15 @@
     require_once("conexion.php");
     $db = new Database;
     $conectar = $db -> conectar();
-
+    
     require 'vendor/autoload.php';
     use Picqer\Barcode\BarcodeGeneratorPNG;
+    
+    $asigna =[];
+
+    $usua = $conectar->prepare("SELECT * FROM lote");
+    $usua->execute();
+    $asigna = $usua->fetchAll(PDO::FETCH_ASSOC);
 
     if ((isset($_POST["registro"])) && ($_POST["registro"] == "formu")) {
         $dueño = $_POST['dueño'];
@@ -21,9 +27,6 @@
         $insertsql = $conectar->prepare("INSERT INTO lote(dueño,barrio,frente,ancho,cod_bar) VALUES (?,?,?,?,?)");
         $insertsql->execute([$dueño,$barrio,$frente,$ancho,$codigo_barras]);
 
-        $usua = $conectar->prepare("SELECT * FROM lote");
-        $usua->execute();
-        $asigna = $usua->fetchAll(PDO::FETCH_ASSOC);
     }
 
 ?>
